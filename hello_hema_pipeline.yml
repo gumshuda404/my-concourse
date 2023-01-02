@@ -1,5 +1,5 @@
 resources:
-- name: trying git
+- name: trying-git
   type: git
   source:
     uri: https://github.com/concourse/docs
@@ -8,7 +8,7 @@ jobs:
 - name: job-hello-world
   public: true  
   plan: 
-  - get: trying git
+  - get: trying-git
     trigger: true
   - task: hello-world
     file: my-concourse/tasks/hello_hema_task.yml
