@@ -2,7 +2,7 @@ resources:
 - name: trying git
   type: git
   source:
-    uri: https://github.com/gumshuda404/my-concourse.git
+    uri: https://github.com/concourse/docs
     branch: main 
 jobs:
 - name: job-hello-world
