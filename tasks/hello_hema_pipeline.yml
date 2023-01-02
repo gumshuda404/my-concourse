@@ -1,14 +1,14 @@
----
+resources:
+- name: trying git
+  type: git
+  source:
+    uri: https://github.com/gumshuda404/my-concourse.git
+    branch: main 
 jobs:
-- name: job
-  public: true
-  plan:
-  - task: simple-task
-    config:
-      platform: linux
-      image_resource:
-        type: registry-image
-        source: { repository: busybox }
-      run:
-        path: echo
-        args: ["Hello world!"]
+- name: job-hello-world
+  public: true  
+  plan: 
+  - get: trying git
+    trigger: true
+  - task: hello-world
+    file: my-concourse/tasks/hello_hema_task.yml
