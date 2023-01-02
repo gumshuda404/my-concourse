@@ -1,6 +1,7 @@
 resources:
 - name: trying-git
   type: git
+  icon: github
   source:
     uri: https://github.com/concourse/docs
     branch: main 
