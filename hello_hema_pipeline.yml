@@ -12,7 +12,7 @@ jobs:
   - get: trying-git
     trigger: true
   - task: hello-hema
-    trigger: true
+    public: true
     config:
       platform: linux
       image_resource:
