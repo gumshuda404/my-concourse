@@ -12,7 +12,6 @@ jobs:
   - get: trying-git
     trigger: true
   - task: hello-hema
-    public: true
     config:
       platform: linux
       image_resource:
