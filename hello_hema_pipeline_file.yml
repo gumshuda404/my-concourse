@@ -12,4 +12,4 @@ jobs:
   - get: trying-git
     trigger: true
   - task: hello-hema
-    file: trying-git/tasks/hello_hema_task.yml
+    file: "trying-git/tasks/hello_hema_task.yml"
