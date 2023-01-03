@@ -12,4 +12,11 @@ jobs:
   - get: trying-git
     trigger: true
   - task: hello-hema
-    file: ./my-concourse/tasks/hello_hema_task.yml
+      config:
+        platform: linux
+        image_resource:
+          type: docker-image
+          source: {repository: busybox}
+        run:
+          path: echo
+          args: [hello hema]
