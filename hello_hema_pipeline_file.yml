@@ -12,4 +12,14 @@ jobs:
   - get: trying-git
     trigger: true
   - task: hello-hema
-    file: trying-git/jobs/hello_hema_job.yml
+    #file: trying-git/jobs/hello_hema_job.yml
+    config:
+      inputs:
+        - name: trying-git
+      platform: linux
+      image_resource:
+        type: registry-image
+        source: { repository: busybox }
+      run:
+        path: echo
+        args: ["hello-hema"]
