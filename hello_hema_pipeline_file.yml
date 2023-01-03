@@ -1,0 +1,15 @@
+resources:
+- name: trying-git
+  type: git
+  icon: github
+  source:
+    uri: https://github.com/gumshuda404/my-concourse.git
+    branch: main 
+jobs:
+- name: job-hello-hema
+  public: true  
+  plan: 
+  - get: trying-git
+    trigger: true
+  - task: hello-hema
+    file: trying-git/tasks/hello_hema_task.yml
