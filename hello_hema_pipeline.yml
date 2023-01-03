@@ -11,5 +11,5 @@ jobs:
   plan: 
   - get: trying-git
     trigger: true
-  - task: hello-world
+  - task: hello-hema
     file: my-concourse/tasks/hello_hema_task.yml
