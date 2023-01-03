@@ -6,7 +6,7 @@ resources:
     uri: https://github.com/concourse/docs
     branch: main 
 jobs:
-- name: job-hello-world
+- name: job-hello-hema
   public: true  
   plan: 
   - get: trying-git
