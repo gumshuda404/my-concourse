@@ -4,7 +4,7 @@ resources:
   icon: github
   source:
     uri: https://github.com/gumshuda404/my-concourse.git
-    branch: master 
+    branch: main
 jobs:
 - name: job-hello-hema
   public: true  
