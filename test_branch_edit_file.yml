@@ -4,9 +4,7 @@ resources:
   icon: github
   source:
     uri: https://github.com/gumshuda404/my-concourse.git
-    branch: 
-      path: bash
-      args: git branch --show-current
+    branch: main
       
 jobs:
 - name: job-hello-hema
