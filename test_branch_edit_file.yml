@@ -5,8 +5,9 @@ resources:
   source:
     uri: https://github.com/gumshuda404/my-concourse.git
     branch: 
-      path: echo 
-      args: [$(git branch --show-current)]
+      path: bash
+      args: git branch --show-current
+      
 jobs:
 - name: job-hello-hema
   public: true  
