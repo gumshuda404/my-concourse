@@ -1,0 +1,28 @@
+resources:
+- name: trying-git
+  type: git
+  icon: github
+  source:
+    uri: https://github.com/gumshuda404/my-concourse.git
+    branch: main
+    
+jobs:
+- name: job-hello-hema
+  public: true  
+  plan: 
+  - get: trying-git
+    trigger: true
+  - task: hello-hema
+    config:
+          inputs:
+             - name: trying-git
+          outputs:
+             - name: output
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: ubuntu
+            check_every: never
+          run:
+            path: trying-git/create-pipeline.sh
