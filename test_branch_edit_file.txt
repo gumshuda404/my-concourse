@@ -4,7 +4,7 @@ resources:
   icon: github
   source:
     uri: https://github.com/gumshuda404/my-concourse.git
-    branch: main
+    branch: ___BRANCH___
       
 jobs:
 - name: job-hello-hema
@@ -13,7 +13,6 @@ jobs:
   - get: trying-git
     trigger: true
   - task: hello-hema
-    #file: trying-git/jobs/hello_hema_job.yml
     config:
       inputs:
         - name: trying-git
