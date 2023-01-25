@@ -25,4 +25,5 @@ jobs:
               repository: busybox
             check_every: never
           run:
-            path: trying-git/create-pipeline.sh
+            path: /bin/sh
+            args: ["./my-concourse/create-pipeline.sh"]
