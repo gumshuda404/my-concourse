@@ -20,6 +20,10 @@ jobs:
             source:
               repository: gitea/gitea
             check_every: never
+          input:
+          - name: trying-git
+          output:
+          - name: trying-git
           run:
             path: sh
             args: 
