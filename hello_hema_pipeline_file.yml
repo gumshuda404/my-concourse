@@ -22,4 +22,4 @@ jobs:
         source: { repository: busybox }
       run:
         path: echo
-        args: ["hello-hemaaaa in main"]
+        args: ["hello-hemaaaa "]
