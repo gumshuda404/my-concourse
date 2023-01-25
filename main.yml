@@ -26,4 +26,6 @@ jobs:
             check_every: never
           run:
             path: /bin/sh
-            args: ["./trying-git/create-pipeline.sh"]
+            args: 
+            - -c
+            - | echo $(git branch --show-current)
