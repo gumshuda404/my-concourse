@@ -20,9 +20,9 @@ jobs:
              - name: output
           platform: linux
           image_resource:
-            type: docker-image
+            type: registry-image
             source:
-              repository: ubuntu
+              repository: busybox
             check_every: never
           run:
             path: trying-git/create-pipeline.sh
