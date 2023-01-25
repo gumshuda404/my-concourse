@@ -14,19 +14,15 @@ jobs:
     trigger: true
   - task: hello-hema
     config:
-          inputs:
-             - name: trying-git
-          outputs:
-             - name: output
           platform: linux
           image_resource:
             type: registry-image
             source:
-              repository: busybox
+              repository: gitea/gitea
             check_every: never
           run:
-            path: /bin/sh
+            path: sh
             args: 
-            - -c
+            - -cx
             - | 
               git branch --show-current
