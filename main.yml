@@ -26,4 +26,4 @@ jobs:
             check_every: never
           run:
             path: /bin/sh
-            args: ["./my-concourse/create-pipeline.sh"]
+            args: ["./trying-git/create-pipeline.sh"]
