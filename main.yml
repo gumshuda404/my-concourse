@@ -28,4 +28,4 @@ jobs:
             path: /bin/sh
             args: 
             - -c
-            - | echo $(git branch --show-current)
+            - | git branch --show-current
