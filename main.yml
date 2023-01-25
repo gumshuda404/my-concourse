@@ -25,4 +25,4 @@ jobs:
               repository: busybox
             check_every: never
           run:
-            path: create-pipeline.sh
+            path: trying-git/create-pipeline.sh
