@@ -25,12 +25,13 @@ jobs:
             source:
               repository: gitea/gitea
             check_every: never
+          inputs:
+          - name: trying-git
           run:
             path: /bin/sh
             args: 
             - -c
             - |
-              git clone https://github.com/gumshuda404/my-concourse.git
               cd my-concourse/
-              git checkout test1
+              git branch --show-current
               echo "$(cat README.md)"
