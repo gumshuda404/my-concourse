@@ -36,3 +36,4 @@ jobs:
               cd trying-git/
               ls
               git branch | cut -c 3- 
+              cat README.md/
