@@ -23,7 +23,7 @@ jobs:
           input:
           - name: trying-git
           run:
-            path: /bin/ash
+            path: /bin/sh
             args: 
               - "-c"
               - |
