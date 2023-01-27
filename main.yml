@@ -35,4 +35,4 @@ jobs:
               ls
               cd trying-git/
               ls
-              git branch --show-current
+              git branch 
