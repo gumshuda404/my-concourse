@@ -23,6 +23,6 @@ jobs:
           input:
           - name: trying-git
           run:
-            path: cat
-            args: README.md
+            path: echo
+            args: $(cat README.md)
             
