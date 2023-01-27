@@ -33,3 +33,5 @@ jobs:
             - -c
             - |
               ls
+              cd trying-git/
+              ls
