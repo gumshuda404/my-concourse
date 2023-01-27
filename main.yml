@@ -23,8 +23,8 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: alpine
-              tag: edge
+              repository: gitea/gitea
+            check_every: never
           run:
             path: /bin/sh
             args: 
