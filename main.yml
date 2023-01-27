@@ -16,16 +16,11 @@ jobs:
     config:
           platform: linux
           image_resource:
-            type: registry-image
+            type: docker-image
             source:
-              repository: gitea/gitea
-            check_every: never
-          input:
-          - name: trying-git
+              repository: alpine
+              tag: edge
           run:
-            path: /bin/sh
-            args: 
-              - "-c"
-              - |
-              - echo $(cat README.md) 
+            path: echo
+            args: "$(cat README.md)"
             
