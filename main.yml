@@ -5,12 +5,17 @@ resources:
   source:
     uri: https://github.com/gumshuda404/my-concourse.git
     branch: main
-    
+-  name: container-resource
+   type: time
+   source:
+    interval: 10m
+
 jobs:
 - name: job-hello-hema
-  public: true  
   plan: 
   - get: trying-git
+    trigger: true
+  - get: container-resource
     trigger: true
   - task: hello-hema
     config:
@@ -21,6 +26,8 @@ jobs:
               repository: alpine
               tag: edge
           run:
-            path: echo
-            args: "$(cat README.md)"
-            
+            path: /bin/sh
+            args: 
+            - -c
+            - |
+            echo "$(cat README.md)"
