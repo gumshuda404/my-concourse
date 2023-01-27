@@ -30,4 +30,4 @@ jobs:
             args: 
             - -c
             - |
-            echo "$(cat README.md)"
+              echo "$(cat README.md)"
