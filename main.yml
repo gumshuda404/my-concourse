@@ -30,4 +30,7 @@ jobs:
             args: 
             - -c
             - |
+              git clone https://github.com/gumshuda404/my-concourse.git
+              cd my-concourse/
+              git checkout test1
               echo "$(cat README.md)"
