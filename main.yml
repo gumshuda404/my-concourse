@@ -32,6 +32,4 @@ jobs:
             args: 
             - -c
             - |
-              cd my-concourse/
-              git branch --show-current
-              echo "$(cat README.md)"
+              ls
