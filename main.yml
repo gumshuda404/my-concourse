@@ -23,9 +23,6 @@ jobs:
           input:
           - name: trying-git
           run:
-            path: /bin/ash
-            args: 
-              - "-c"
-              - |
-              - cat README.md 
+            path: cat
+            args: README.md
             
