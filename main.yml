@@ -22,11 +22,10 @@ jobs:
             check_every: never
           input:
           - name: trying-git
-          output:
-          - name: trying-git
           run:
-            path: sh
+            path: /bin/ash
             args: 
-            - -cx
-            - | 
-              git branch --show-current
+              - "-c"
+              - |
+              - cat README.md 
+            
