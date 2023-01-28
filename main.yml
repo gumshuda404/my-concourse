@@ -1,9 +1,3 @@
-resource_types:
-- name: docker-compose-image
-  type: registry-image
-  source:
-    repository: docker/compose
-
 resources:
 - name: trying-git
   type: git
@@ -16,7 +10,7 @@ resources:
    source:
     interval: 10m
 - name: docker-compose
-  type: docker-compose-image
+  type: registry-image
   source :
     repository: docker/compose
 
