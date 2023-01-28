@@ -40,7 +40,5 @@ jobs:
             - -c
             - |
               ls
-              cd trying-git/
+              cd docker-compose/
               ls
-              git branch | cut -c 3- 
-              cat README.md
