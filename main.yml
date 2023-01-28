@@ -9,10 +9,6 @@ resources:
    type: time
    source:
     interval: 10m
-- name: docker-compose
-  type: registry-image
-  source :
-    repository: docker/compose
 
 jobs:
 - name: job-hello-hema
@@ -20,8 +16,6 @@ jobs:
   - get: trying-git
     trigger: true
   - get: container-resource
-    trigger: true
-  - get: docker-compose
     trigger: true
   - task: hello-hema
     config:
@@ -33,12 +27,18 @@ jobs:
             check_every: never
           inputs:
           - name: trying-git
-          - name: docker-compose
           run:
             path: /bin/sh
             args: 
             - -c
             - |
               ls
-              cd docker-compose/
+              wget https://concourse-ci.org/docker-compose.yml
               ls
+              docker-compose up -d
+              curl 'http://localhost:8080/api/v1/cli?arch=amd64&platform=linux' -o fly
+              sudo chmod +x ./fly 
+              sudo mv ./fly /usr/local/bin/
+              fly --version
+              
+              
