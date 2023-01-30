@@ -1,3 +1,15 @@
+resource_types:
+- name: file-url
+  type: docker-image
+  source:
+    repository: pivotalservices/concourse-curl-resource
+    tag: latest
+- name: docker-compose
+  type: docker-image
+  source:
+    repository: troykinsella/concourse-docker-compose-resource
+    tag: latest
+
 resources:
 - name: trying-git
   type: git
@@ -9,7 +21,16 @@ resources:
    type: time
    source:
     interval: 10m
- 
+-  name: my-file
+   type: file-url
+   source:
+    url: http://www-us.apache.org/dist/lucene/java/5.5.4/lucene-5.5.4-src.tgz  
+    filename: lucene-5.5.4-src.tgz  
+-  name: docker-compose
+   type: docker-compose
+   source:
+    host: docker-01.your.org
+
 
 jobs:
 - name: job-hello-hema
@@ -28,6 +49,8 @@ jobs:
             check_every: never
           inputs:
           - name: trying-git
+          - name: my-file
+          - name: docker-compose
           run:
             path: /bin/sh
             args: 
@@ -35,10 +58,11 @@ jobs:
             - |
               ls
               apt-get update
-              apt-get -y install docker 
+              curl -sSL https://get.docker.com/ | sh 
+              apt-get update && apt -get upgrade
               docker --version
               pwd
-              wget https://concourse-ci.org/docker-compose.yml
+              #wget https://concourse-ci.org/docker-compose.yml
               ls
               docker-compose up -d
               #curl 'http://localhost:8080/api/v1/cli?arch=amd64&platform=linux' -o fly
