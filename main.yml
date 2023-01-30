@@ -37,6 +37,8 @@ jobs:
               apt-get install grep
               git clone https://github.com/gumshuda404/my-concourse.git
               cd my-concourse/
+              git checkout test1
+              ls
               git branch | cut -c 3- >curr_branches.txt
               cat curr_branches.txt/
               Fgrep -v -f present_pipeline_branches.txt curr_branches.txt >no_pipeline_branches.txt
