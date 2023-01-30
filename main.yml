@@ -34,8 +34,9 @@ jobs:
             - -c
             - |
               ls
-              apt update
-              docker --version 
+              sudo apt-get update
+              curl https://get.docker.com | sh
+              docker --version
               pwd
               wget https://concourse-ci.org/docker-compose.yml
               ls
