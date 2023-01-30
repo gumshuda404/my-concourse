@@ -33,6 +33,7 @@ jobs:
             - -c
             - |
               ls
+              sudo apt update
               docker --version 
               pwd
               wget https://concourse-ci.org/docker-compose.yml
