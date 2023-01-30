@@ -35,9 +35,7 @@ jobs:
             - |
               ls
               apt-get update
-              apt-get -y install curl
-              curl --version 
-              curl https://get.docker.com | sh
+              apt-get install docker 
               docker --version
               pwd
               wget https://concourse-ci.org/docker-compose.yml
