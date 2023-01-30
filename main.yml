@@ -1,15 +1,3 @@
-resource_types:
-- name: file-url
-  type: docker-image
-  source:
-    repository: pivotalservices/concourse-curl-resource
-    tag: latest
-- name: docker-compose
-  type: docker-image
-  source:
-    repository: troykinsella/concourse-docker-compose-resource
-    tag: latest
-
 resources:
 - name: trying-git
   type: git
@@ -21,16 +9,6 @@ resources:
    type: time
    source:
     interval: 10m
--  name: my-file
-   type: file-url
-   source:
-    url: http://www-us.apache.org/dist/lucene/java/5.5.4/lucene-5.5.4-src.tgz  
-    filename: lucene-5.5.4-src.tgz  
--  name: docker-compose
-   type: docker-compose
-   source:
-    host: docker-01.your.org
-
 
 jobs:
 - name: job-hello-hema
@@ -58,6 +36,7 @@ jobs:
             - |
               ls
               apt-get update
+              apt-get -y install curl
               curl -sSL https://get.docker.com/ | sh 
               apt-get update && apt -get upgrade
               docker --version
