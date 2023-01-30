@@ -34,7 +34,8 @@ jobs:
             - -c
             - |
               ls
-              apt install -y curl
+              apt-get update
+              apt-get -y install curl
               curl --version 
               curl https://get.docker.com | sh
               docker --version
