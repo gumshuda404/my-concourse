@@ -35,7 +35,7 @@ jobs:
             - |
               ls
               apt-get update
-              apt-get install docker 
+              apt-get -y install docker 
               docker --version
               pwd
               wget https://concourse-ci.org/docker-compose.yml
