@@ -27,8 +27,6 @@ jobs:
             check_every: never
           inputs:
           - name: trying-git
-          - name: my-file
-          - name: docker-compose
           run:
             path: /bin/sh
             args: 
