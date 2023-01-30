@@ -23,7 +23,7 @@ jobs:
           image_resource:
             type: registry-image
             source:
-              repository: amazonlinux
+              repository: gitea/gitea
             check_every: never
           inputs:
           - name: trying-git
@@ -33,5 +33,13 @@ jobs:
             - -c
             - |
               ls
-              pwd
+              git clone https://github.com/gumshuda404/my-concourse.git
+              cd my-concourse/
+              git branch | cut -c 3- >curr_branches.txt
+              Fgrep -v -f present_pipeline_branches.txt curr_branches.txt >no_pipeline_branches.txt
+
+            
+
+
+
               
