@@ -23,7 +23,7 @@ jobs:
           image_resource:
             type: registry-image
             source:
-              repository: gitea/gitea
+              repository: ubuntu
             check_every: never
           inputs:
           - name: trying-git
@@ -35,6 +35,7 @@ jobs:
               ls
               apt-get update
               apt-get install grep
+              apt-get install git
               git clone https://github.com/gumshuda404/my-concourse.git
               cd my-concourse/
               git checkout test1
