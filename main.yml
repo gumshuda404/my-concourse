@@ -41,7 +41,10 @@ jobs:
               git checkout test1
               ls
               git branch | cut -c 3- >curr_branches.txt
-              cat curr_branches.txt/
+              git add .
+              git commit -m new 
+              git push 
+              cat curr_branches.txt
               Fgrep -v -f present_pipeline_branches.txt curr_branches.txt >no_pipeline_branches.txt
 
             
