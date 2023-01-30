@@ -34,8 +34,8 @@ jobs:
             - |
               ls
               apt-get update
-              apt-get install grep
-              apt-get install git
+              apt-get -y install grep
+              apt-get -y install git 
               git clone https://github.com/gumshuda404/my-concourse.git
               cd my-concourse/
               git checkout test1
